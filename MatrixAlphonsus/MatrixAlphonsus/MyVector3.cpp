@@ -1,10 +1,7 @@
-/// <summary>
+  /// <summary>
 /// Vector 3 class
-/// Andrew Bashorum
-/// est time 8-15 hours
-/// act time 10 hours
-/// </summary>
-#include "stdafx.h"
+/// Alphonsus Aluya,
+///
 #include "MyVector3.h"
 #include <string.h>
 #define PI           3.14159265358979323846
@@ -35,14 +32,14 @@ MyVector3::~MyVector3()
 std::string MyVector3::toString()
 {
 	const std::string output = "[" + std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z) + "]";
-	return output;
+	return output;	
 }
 
 MyVector3::MyVector3(double t_x, double t_y, double t_z)
 {
 	x = t_x;
-	z = t_z;
 	y = t_y;
+	z = t_z;
 }
 
 /// <summary>
@@ -51,102 +48,36 @@ MyVector3::MyVector3(double t_x, double t_y, double t_z)
 /// <param name="t_sfVector">input vector</param>
 MyVector3::MyVector3(sf::Vector3f t_sfVector)
 {
-	x = static_cast<double>(t_sfVector.x); // turns x , y and z components to doubles for vector 3f
+	x = static_cast<double>( t_sfVector.x);
 	y = static_cast<double>(t_sfVector.y);
 	z = static_cast<double>(t_sfVector.z);
 }
 
 MyVector3::MyVector3(sf::Vector3i t_sfVector)
 {
-	x = static_cast<int>(t_sfVector.x); // casts x , y and z components to int for use in vector 3i
-	y = static_cast<int>(t_sfVector.y);
-	z = static_cast<int>(t_sfVector.z);
+	x = static_cast<double>(t_sfVector.x);
+	y = static_cast<double>(t_sfVector.y);
+	z = static_cast<double>(t_sfVector.z);
 }
 
 MyVector3::MyVector3(sf::Vector2i t_sfVector)
 {
-	x = static_cast<int>(t_sfVector.x); // casts x and y components to int for use in vector 2i
+	x = static_cast<int>(t_sfVector.x);
 	y = static_cast<int>(t_sfVector.y);
-	z = 0;
 }
 
 MyVector3::MyVector3(sf::Vector2u t_sfVector)
 {
-	x = static_cast<unsigned int>(t_sfVector.x);  // casts to unsigned int
-	y = static_cast<unsigned int>(t_sfVector.y);
+	x = static_cast<int>(t_sfVector.x);
+	y = static_cast<int>(t_sfVector.y);
 	z = 0;
 }
 
 MyVector3::MyVector3(sf::Vector2f t_sfVector)
 {
-	x = static_cast<float>(t_sfVector.x); // casts to float for 2f vectors
-	y = static_cast<float>(t_sfVector.y);
+	x = static_cast<int>(t_sfVector.x);
+	y = static_cast<int>(t_sfVector.y);
 	z = 0;
-}
-
-MyVector3 MyVector3::operator+(const MyVector3 t_right) const
-{
-	 // adds indivual componets of the two vectors 
-	return MyVector3(x + t_right.x, y + t_right.y, z + t_right.z);
-}
-
-MyVector3 MyVector3::operator-(const MyVector3 t_right) const
-{
-	  // subtracts indivual components of the two vector
-	return MyVector3(x - t_right.x, y - t_right.y, z - t_right.z);
-}
-
-MyVector3 MyVector3::operator*(const double t_scalar) const
-{
-  // multiplys indivual components of the two vectors
-	return MyVector3(x * t_scalar, y * t_scalar, z * t_scalar);
-}
-
-MyVector3 MyVector3::operator/(const double t_divisor) const
-{
-	 // divides indivual componets of the two vector
-	return MyVector3(x / t_divisor, y / t_divisor, z / t_divisor);
-}
-
-MyVector3 MyVector3::operator+=(const MyVector3 t_right)
-{
-	x += t_right.x;
-	y += t_right.y;
-	z += t_right.z;  // adds indivual componets of the two vectors in shorthand
-	return MyVector3( x, y, z);
-}
-
-MyVector3 MyVector3::operator-=(const MyVector3 t_right)
-{
-	x -= t_right.x;
-	y -= t_right.y;
-	z -= t_right.z;  // adds indivual componets of the two vectors in shorthand
-	return MyVector3(x, y, z);
-}
-
-bool MyVector3::operator==(const MyVector3 t_right) const
-{
-	if (x == t_right.x && y == t_right.y && z == t_right.z)  // checks each component for equality
-	{
-		return true;
-	}
-	else // if not equal
-	{
-		return false;
-	}
-
-}
-
-bool MyVector3::operator!=(const MyVector3 t_right) const
-{
-	if (x == t_right.x && y == t_right.y && z == t_right.z)   // checks each component for equality
-	{
-		return false;
-	}
-	else
-	{
-		return true;
-	}
 }
 
 MyVector3::operator sf::Vector2u()
@@ -154,93 +85,161 @@ MyVector3::operator sf::Vector2u()
 	return sf::Vector2u{};
 }
 
+
+MyVector3 MyVector3::operator+(const MyVector3 t_right) const
+{
+	sf::Vector3f vectorOne{};
+	vectorOne.x = x + t_right.x;
+	vectorOne.y = y + t_right.y;
+	vectorOne.z = z + t_right.z;
+	return vectorOne;
+}
+
+MyVector3 MyVector3::operator-(const MyVector3 t_right) const
+{
+	sf::Vector3f vectorOne{};
+	vectorOne.x = x - t_right.x;
+	vectorOne.y = y - t_right.y;
+	vectorOne.z = z - t_right.z;
+	return vectorOne;
+}
+
+MyVector3 MyVector3::operator*(const double t_scalar) const
+{
+	sf::Vector3f vectorOne{};
+	vectorOne.x = x * t_scalar;
+	vectorOne.y = y * t_scalar;
+	vectorOne.z = z * t_scalar;
+	return vectorOne;
+}
+
+MyVector3 MyVector3::operator/(const double t_divisor) const
+{
+	sf::Vector3f vectorOne{};
+	vectorOne.x = x / t_divisor;
+	vectorOne.y = y / t_divisor;
+	vectorOne.z = z / t_divisor;
+	return vectorOne;
+}
+
+MyVector3 MyVector3::operator+=(const MyVector3 t_right)
+{
+	
+	return MyVector3(x += t_right.x, y += t_right.y, z += t_right.z);
+	
+}
+
+MyVector3 MyVector3::operator-=(const MyVector3 t_right)
+{
+	
+	return MyVector3(x -= t_right.x, y -= t_right.y, z -= t_right.z);
+}
+
+bool MyVector3::operator==(const MyVector3 t_right) const
+{
+	sf::Vector3f vectorOne{};
+	if (vectorOne.x == t_right.x && vectorOne.y == t_right.y && vectorOne.z == t_right.z)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool MyVector3::operator!=(const MyVector3 t_right) const
+{
+	sf::Vector3f vectorOne{};
+	if (vectorOne.x == t_right.x || vectorOne.y == t_right.y || vectorOne.z == t_right.z)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 MyVector3 MyVector3::operator-()
 {
-	 // changes components to negative
-	return MyVector3(-x, -y, -z);
+	MyVector3 x = -x, y = -y, z = -z;
+	return MyVector3();
 }
 
 void MyVector3::reverseX()
 {
-	x = x * -1; // change sign of x
+	x = x * -1;
 }
 
 void MyVector3::reverseY()
 {
-	y = y * -1; // change sign of y
+	y = y * -1;
 }
 
-double MyVector3::length() const /// or magnitude
+double MyVector3::length() const
 {
-	float sumOfSquares = (x*x) + (y*y) + (z*z); // squares and adds each compmnet
-	const float length = sqrt(sumOfSquares); // finds length
+	float sumOfSquares = (x * x) + (y * y) + (z * z);
+	const float length = sqrt(sumOfSquares);
 	return length;
 }
 
 double MyVector3::lengthSquared() const
 {
-	 // calls length function to find length
-	float lengthSquared = std::pow(x, 2) + std::pow(y, 2) + std::pow(z, 2);// squares awnser to find length squared
+	float original = length();
+	float lengthSquared = original * original;
 	return lengthSquared;
 }
 
 double MyVector3::dot(const MyVector3 t_other) const
 {
-	const float result = (x * t_other.x) + (y * t_other.y) + (z * t_other.z); // multiplys and adds each componen
-	return result; //to find dot product
+	const float dotProduct = (x * t_other.x) + (y * t_other.y) + (z * t_other.z);
+	return dotProduct;
 }
 
 MyVector3 MyVector3::crossProduct(const MyVector3 t_other) const
 {
-	const double resultX = y * t_other.z - z * t_other.y; // subtracts zy from yz to find new x component
-	const double resultZ = x * t_other.y - y * t_other.x;  // subtracts yx from xy to find new z component
-	const double resultY = z * t_other.x - x * t_other.z;  // subtracts xy from yx to find new x component
-	return MyVector3(resultX, resultY, resultZ);       // doesnt work unsure why
+	const float resultOne = y * t_other.z - z * t_other.y;
+	const float resultTwo = x * t_other.y - y * t_other.x;
+	const float resultThree = z * t_other.x - x * t_other.y;
+	return MyVector3(resultOne, resultTwo, resultThree);
 }
 
 double MyVector3::angleBetween(const MyVector3 t_other) const
 {
-	double top = dot(t_other);
-	double under = length() * t_other.length();
-	double angleRadians;
-
-	if (under != 0)
-	{
-		double answer = top / under;
-		if (answer > 1) answer = 1;
-		if (answer < -1) answer = -1;
-		angleRadians = std::acos(answer);
-		const double angleDegrees = angleRadians * 180.0 / PI;
-		return angleDegrees;
-	}
-	return 0.0;
-	
+	MyVector3 vectorOne = { x, y, z };
+	float getTheDot = vectorOne.dot(t_other);
+	float angleAcos = cos(getTheDot);
+	float angle = angleAcos / vectorOne.length() * t_other.length();
+	float radians = angle * 180 / PI;
+	return radians;
 }
 
 MyVector3 MyVector3::unit() const
 {
-	MyVector3 preResult{ x,y,z };
-	float resultX = 0.0f;
-	float resultY = 0.0f;
-	float resultZ = 0.0f;
+	MyVector3 results{ x, y, z };
+	float resultOne = 0.0f;
+	float resultTwo = 0.0f;
+	float resultThree = 0.0f;
 
-	float length = preResult.length();
-	if (length != 0.0f) // no divide by 0
+	float length = results.length();
+	if (length != 0.0f)
 	{
-		resultX = x / length; // divides component by maginute of vector
-		resultY = y / length;
-		resultZ = z / length;
+		float resultOne = x / length;
+		float resultTwo = y / length;
+		float resultThree = z / length;
 	}
-	return MyVector3(resultX, resultY, resultZ);
+	return MyVector3(resultOne, resultTwo, resultThree);
 }
 
-//void MyVector3::normalise()
-//{
-//	MyVector3(x, y, z) = MyVector3(x, y, z) / MyVector3(x, y, z).length(); // unsure 
-//}
+void MyVector3::normalise()
+{
+	MyVector3(x, y, z) = MyVector3(x, y, z) / MyVector3(x, y, z).length();
+}
 
 MyVector3 MyVector3::projection(const MyVector3 t_onto) const
 {
+	MyVector3 vecterOne = { x, y, z };
 	double lengthSq = t_onto.lengthSquared();
 	double dotProduct = dot(t_onto);
 	double scale{ 1.0 };
@@ -248,10 +247,13 @@ MyVector3 MyVector3::projection(const MyVector3 t_onto) const
 	{
 		scale = dotProduct / lengthSq;
 	}
+	
 	return t_onto * scale;
 }
 
 MyVector3 MyVector3::rejection(const MyVector3 t_onto) const
 {
-	return this->operator-(projection(t_onto));
+	
+	return this ->operator-(projection(t_onto));
 }
+

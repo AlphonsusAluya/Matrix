@@ -2,7 +2,9 @@
 #define MYVECTOR3
 
 
-// Andrew Bashorum
+/// <summary>
+/// your name here or no marks
+/// 
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
@@ -20,6 +22,7 @@ public:
 	std::string toString();
 
 
+	
 	MyVector3(double x, double y, double z);
 	MyVector3(sf::Vector3f t_sfVector);
 	MyVector3(sf::Vector3i t_sfVector);
