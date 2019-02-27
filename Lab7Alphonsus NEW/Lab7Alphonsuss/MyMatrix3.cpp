@@ -2,7 +2,7 @@
 // C00237736
 // Date: 26/2/2019
 // time estimated 8 hours
-// actual time ??
+// actual time 5 hours
 #include "MyMatrix3.h"
 #include "MyVector3.h"
 
@@ -80,16 +80,16 @@ bool MyMatrix3::operator!=(const MyMatrix3 other) const
 MyMatrix3 MyMatrix3::operator+(const MyMatrix3 t_other) const
 {
 	MyMatrix3 matrix = { m11 + t_other.m11, m12 + t_other.m12, m13 + t_other.m13,
-						 m21 + t_other.m21, m22 + t_other.m22, m13 + t_other.m23,
-						 m31 + t_other.m31, m32 + t_other.m32, m13 + t_other.m33 };
+						 m21 + t_other.m21, m22 + t_other.m22, m23 + t_other.m23,
+						 m31 + t_other.m31, m32 + t_other.m32, m33 + t_other.m33 };
 	return matrix;
 }
 
 MyMatrix3 MyMatrix3::operator-(const MyMatrix3 t_other) const
 {
 	MyMatrix3 matrix = { m11 - t_other.m11, m12 - t_other.m12, m13 - t_other.m13,
-						 m21 - t_other.m21, m22 - t_other.m22, m13 - t_other.m23,
-						 m31 - t_other.m31, m32 - t_other.m32, m13 - t_other.m33 };
+						 m21 - t_other.m21, m22 - t_other.m22, m23 - t_other.m23,
+						 m31 - t_other.m31, m32 - t_other.m32, m33 - t_other.m33 };
 	return matrix;
 }
 
@@ -140,7 +140,9 @@ MyMatrix3 MyMatrix3::transpose() const
 
 double MyMatrix3::determinant() const
 {
-	double determinant = ((m11 * (m22 * m33) - (m23 * m32))) - (m21 * ((m12 * m33) - (m32 * m13))) + (m31 * ((m23 * m12) - (m22 * m13)));
+
+	double determinant;
+	determinant = m11 * ((m22 * m33) - (m32 * m23)) - m21 * ((m33 * m12) - (m32 * m13)) + m31 * ((m23 * m12) - (m22 * m13));
 	return determinant;
 }
 
