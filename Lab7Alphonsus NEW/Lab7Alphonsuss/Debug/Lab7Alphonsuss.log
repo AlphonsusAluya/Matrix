@@ -1,0 +1,83 @@
+﻿  main.cpp
+  MyMatrix3.cpp
+  MyVector3.cpp
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(92): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(93): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(94): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(101): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(102): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(103): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(110): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(111): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(112): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(119): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(120): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(121): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(182): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(189): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(196): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(196): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(202): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(202): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(203): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(203): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(204): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(204): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(211): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(213): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(214): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(225): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(228): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(229): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(230): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+c:\users\alphonsus\desktop\lab7alphonsuss\lab7alphonsuss\myvector3.cpp(168): warning C4717: 'MyVector3::operator-': recursive on all control paths, function will cause runtime stack overflow
+  Lab7Alphonsuss.vcxproj -> C:\Users\Alphonsus\Desktop\Lab7Alphonsuss\Debug\Lab7Alphonsuss.exe
