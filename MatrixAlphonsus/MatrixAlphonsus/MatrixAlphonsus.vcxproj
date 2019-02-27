@@ -155,6 +155,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MatrixAlphonsus.cpp" />
     <ClCompile Include="MyMatrix3.cpp" />
     <ClCompile Include="MyVector3.cpp" />

@@ -47,7 +47,10 @@ MyMatrix3::~MyMatrix3()
 
 std::string MyMatrix3::toString() const
 {
-	return std::string();
+	std::string output = "" + std::to_string(m11) + std::to_string(m12) + std::to_string(m13) + "\n" +
+							  std::to_string(m21) + std::to_string(m22) + std::to_string(m23) + "\n" +
+							  std::to_string(m31) + std::to_string(m32) + std::to_string(m33) + "\n";
+	return output;
 }
 
 bool MyMatrix3::operator==(const MyMatrix3 other) const
@@ -144,15 +147,85 @@ double MyMatrix3::determinant() const
 
 MyMatrix3 MyMatrix3::inverse() const
 {
-	return MyMatrix3();
+	double determinant = this->determinant();
+
+	MyVector3 row1(((m22 * m33) - (m32 * m23)), ((m13 * m32) - (m33 * m12)), ((m12 * m23) - (m13 * m22)));
+	MyVector3 row2(((m23 * m31) - (m21 * m33)), ((m11 * m33) - (m13 * m31)), ((m13 * m21) - (m11 * m23)));
+	MyVector3 row3(((m21 * m32) - (m22 * m31)), ((m12 * m31) - (m11 * m32)), ((m11 * m22) - (m12 * m21)));
+
+	row1 = row1 * (1 / determinant);
+	row2 = row2 * (1 / determinant);
+	row3 = row3 * (1 / determinant);
+
+	MyMatrix3 inverseMatrix(row1, row2, row3);
+
+	return inverseMatrix;
 }
 
 MyVector3 MyMatrix3::row(const int t_row) const
 {
-	return MyVector3();
+	MyVector3 row;
+	if (t_row == 0)
+	{
+		row = { m11, m12, m13 };
+	}
+	else if (t_row == 1)
+	{
+		row = { m21, m22, m23 };
+	}
+	else if (t_row == 2)
+	{
+		row = { m31, m32, m33 };
+	}
+	return row;
 }
 
 MyVector3 MyMatrix3::column(const int t_column) const
 {
-	return MyVector3();
+	MyVector3 column;
+	if (t_column == 0)
+	{
+		column = { m11, m21, m31 };
+	}
+	else if (t_column == 1)
+	{
+		column = { m12, m22, m32 };
+	}
+	else if (t_column == 2)
+	{
+		column = { m13, m23, m33 };
+	}
+	return column;
+}
+
+MyMatrix3 MyMatrix3::rotationZ(const double t_angleRadians)
+{
+	MyMatrix3 rotationZ = {1, 0, 0, 0, cos(t_angleRadians), -sin(t_angleRadians), 0, sin(t_angleRadians), cos(t_angleRadians)};
+	return rotationZ;
+}
+
+MyMatrix3 MyMatrix3::rotationY(const double t_angleRadians)
+{
+	MyMatrix3 rotationY = {cos(t_angleRadians), 0, sin(t_angleRadians), 0, 1, 0, -sin(t_angleRadians), 0,  cos(t_angleRadians) };
+	return rotationY;
+}
+
+MyMatrix3 MyMatrix3::rotationX(const double t_angleRadians)
+{
+	MyMatrix3 rotationX = { cos(t_angleRadians), -sin(t_angleRadians), 0, sin(t_angleRadians), cos(t_angleRadians), 0, 0, 0, 1 };
+	return rotationX;
+}
+
+MyMatrix3 MyMatrix3::translation(const MyVector3 t_displacement)
+{
+	MyMatrix3 translation = { 1, 0, t_displacement.x, 0, 1, t_displacement.y, 0,0,1 };
+
+	return translation;
+}
+
+MyMatrix3 MyMatrix3::scale(const double t_scalingfactor)
+{
+	MyMatrix3 scale = { t_scalingfactor, 0, 0, 0, t_scalingfactor, 0, 0, 0, t_scalingfactor };
+
+	return scale;
 }

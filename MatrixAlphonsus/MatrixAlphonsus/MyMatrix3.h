@@ -1,6 +1,7 @@
 #ifndef MY_MATRIX
 #define MY_MATRIX
 #include "MyVector3.h"
+#include "stdafx.h"
 
 
 class MyMatrix3
